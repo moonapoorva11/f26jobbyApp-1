@@ -18,8 +18,6 @@ const ProtectedRoute = (props)=>{
 
     },[]);
 
-    console.log( Component );
-
     return <Component/>
 }
 
