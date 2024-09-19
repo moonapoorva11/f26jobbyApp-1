@@ -9,13 +9,14 @@
 .filter-cont{
     width: 30%;
     height: 100%;
-    background-color: bisque;
 }
 
 .all-jobs-cont{
-
     width: 70%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* background-color: rgb(111, 72, 175); */
 
 }

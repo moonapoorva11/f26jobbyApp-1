@@ -1,5 +1,7 @@
 import "./index.css";
-import { FaStar } from "react-icons/fa";
+import { FaStar,FaBriefcase } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+
 
 
 /*
@@ -37,6 +39,24 @@ const DisplayAllJobs = (props)=> {
 
                   </div>
                   
+                  <div className="location-emptype-ppa-cont">
+
+                        <div className="location-emptype-cont">
+                              <FaLocationDot className="mr-2"/>
+                              <span className="mr-4">{location}</span>
+                              
+                              <FaBriefcase className="mr-2"/>
+                              <span>{employment_type}</span>
+                        </div>
+
+                        <h4>{package_per_annum}</h4>
+
+                  </div>
+
+                  <hr />
+                  
+                  <h5>Description</h5>
+                  <p>{job_description}</p>
 
             </li>
 

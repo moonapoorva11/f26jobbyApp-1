@@ -57,6 +57,13 @@ const Jobs = ()=> {
     },[])
 
 
+    const onChangeSearchIn = (e)=>{
+
+        console.log( e.key );
+
+    }
+
+
     return (
         <div>
                 <Header/>
@@ -66,12 +73,14 @@ const Jobs = ()=> {
                         <div className='filter-cont'>
                             <FilterSection/>
                         </div>
-
-                        <ul className='all-jobs-cont'>
-                            {
-                                allValues.jobsArr.map(each => <DisplayAllJobs key = {each.id} jobsItem = {each}/>)
-                            }
-                        </ul>
+                        <div className='all-jobs-cont'>
+                            <input onKeyUp={onChangeSearchIn} type="search" className='form-control w-75 mb-3'/>
+                                <ul>
+                                    {
+                                        allValues.jobsArr.map(each => <DisplayAllJobs key = {each.id} jobsItem = {each}/>)
+                                    }
+                                </ul>
+                        </div>
 
                 </div>
 

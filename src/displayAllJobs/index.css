@@ -13,3 +13,8 @@
 .title-rating-cont{
     margin-left: 15px;
 }
+.location-emptype-ppa-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
