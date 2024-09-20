@@ -42,7 +42,9 @@ const salaryRangesList = [
   },
 ]
 
-const FilterSection = () => {
+const FilterSection = (props) => {
+
+  const {changeEmpType} = props; 
 
 const [allValues,setvalue] = useState({
     profileDetails:{}
@@ -77,6 +79,12 @@ const token = Cookies.get("jwtToken");
 
   const renderEmploymentTypesList = () => {
 
+    const onChangeEmptype = (e) =>{
+
+        changeEmpType(e.target.value);
+
+    }
+
     
     return employmentTypesList.map(eachType => {
 
@@ -87,6 +95,7 @@ const token = Cookies.get("jwtToken");
             className="checkbox-input"
             value={eachType.employmentTypeId}
             id={eachType.employmentTypeId}
+            onChange={onChangeEmptype}
           />
           <label htmlFor={eachType.employmentTypeId} className="filter-label">
             {eachType.label}
