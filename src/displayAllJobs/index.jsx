@@ -1,6 +1,7 @@
 import "./index.css";
 import { FaStar,FaBriefcase } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 
 
@@ -26,39 +27,43 @@ const DisplayAllJobs = (props)=> {
 
       return(
 
-            <li className="diplay-jobs-card">
+            <Link to = {`/jobs/${id}`}>
 
-                  <div className="logo-rating-cont">
-                        <img src={company_logo_url} style={{width:"70px"}}/>
-                        
-                        <div className="title-rating-cont">
-                              <h3>{title}</h3>
-                              <FaStar style={{color:"gold",marginRight:"5px"}}/>
-                              <span>{rating}</span>
-                        </div>
+                        <li className="diplay-jobs-card">
 
-                  </div>
-                  
-                  <div className="location-emptype-ppa-cont">
+                              <div className="logo-rating-cont">
+                                    <img src={company_logo_url} style={{width:"70px"}}/>
+                                    
+                                    <div className="title-rating-cont">
+                                          <h3>{title}</h3>
+                                          <FaStar style={{color:"gold",marginRight:"5px"}}/>
+                                          <span>{rating}</span>
+                                    </div>
 
-                        <div className="location-emptype-cont">
-                              <FaLocationDot className="mr-2"/>
-                              <span className="mr-4">{location}</span>
+                              </div>
                               
-                              <FaBriefcase className="mr-2"/>
-                              <span>{employment_type}</span>
-                        </div>
+                              <div className="location-emptype-ppa-cont">
 
-                        <h4>{package_per_annum}</h4>
+                                    <div className="location-emptype-cont">
+                                          <FaLocationDot className="mr-2"/>
+                                          <span className="mr-4">{location}</span>
+                                          
+                                          <FaBriefcase className="mr-2"/>
+                                          <span>{employment_type}</span>
+                                    </div>
 
-                  </div>
+                                    <h4>{package_per_annum}</h4>
 
-                  <hr />
-                  
-                  <h5>Description</h5>
-                  <p>{job_description}</p>
+                              </div>
 
-            </li>
+                              <hr />
+                              
+                              <h5>Description</h5>
+                              <p>{job_description}</p>
+
+                        </li>
+
+            </Link>
 
       )
 }

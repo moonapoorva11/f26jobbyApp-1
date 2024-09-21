@@ -25,6 +25,8 @@ const Jobs = ()=> {
 
             const {emptypeList,minPakage,userinput} = allValues;
 
+            console.log( emptypeList );
+
 
             const api = `https://apis.ccbp.in/jobs?employment_type=${emptypeList}&minimum_package=${minPakage}&search=${userinput}`;
 
@@ -39,6 +41,7 @@ const Jobs = ()=> {
 
                 const response = await fetch(api,options);
                 const data = await response.json();
+
 
                 if( response.ok === true){
 
@@ -74,9 +77,20 @@ const Jobs = ()=> {
     }
 
 
-    const onChangeEmpType = (value)=>{
+    const onChangeEmpType = (value,isChecked)=>{
 
-        setValues({...allValues, emptypeList : value});
+        if(isChecked === true){
+
+            setValues({...allValues, emptypeList : [...allValues.emptypeList,value]});
+
+        }
+        else{
+
+            setValues({...allValues, emptypeList : allValues.emptypeList.filter( each=> each !== value )});
+
+        }
+
+        
     }
 
 

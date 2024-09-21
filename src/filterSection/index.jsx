@@ -81,7 +81,8 @@ const token = Cookies.get("jwtToken");
 
     const onChangeEmptype = (e) =>{
 
-        changeEmpType(e.target.value);
+        changeEmpType(e.target.value,e.target.checked);
+
 
     }
 
